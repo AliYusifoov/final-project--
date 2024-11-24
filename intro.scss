@@ -1,0 +1,170 @@
+/* Variables */
+$primary-color: #ffc107; // Yellow
+$secondary-color: #28a745; // Green
+$text-color: #464c51; // Gray
+$highlight-color: #007bff; // Blue
+$light-pink: rgb(248, 215, 218); // Light pink
+$header-bg: #f8f9fa; // Light gray background
+
+/* Breakpoints */
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+
+/* Common Dimensions */
+$btn-padding: 0.5vw 2vh;
+$swiper-padding: 10px;
+
+/* Mixin for Responsive Design */
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == sm {
+    @media (max-width: #{$breakpoint-sm}) { @content; }
+  }
+  @else if $breakpoint == md {
+    @media (max-width: #{$breakpoint-md}) { @content; }
+  }
+  @else if $breakpoint == lg {
+    @media (max-width: #{$breakpoint-lg}) { @content; }
+  }
+}
+
+/* Header Styling */
+.header {
+  background-color: $header-bg;
+  display: flex;
+  justify-content: start;
+  padding: 1rem;
+
+  .buttons {
+    width: 40vw;
+    display: flex;
+    justify-content: space-around;
+
+    .btn {
+      padding: $btn-padding;
+    }
+  }
+
+  @include respond-to(sm) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    .buttons {
+      width: 90%;
+      justify-content: center;
+
+      .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+/* Swiper Styles */
+.swiper {
+  width: 100%;
+  max-width: 75%;
+  height: 70vh;
+  margin: 0 auto;
+  padding: $swiper-padding 0;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    img {
+      width: 50%;
+      height: auto;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      position: absolute;
+      bottom: 8%;
+    }
+
+    p {
+      position: absolute;
+      bottom: 1%;
+      color: $text-color;
+    }
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #fff;
+    width: 2rem;
+    height: 100%;
+    background-color: $light-pink;
+    margin-top: -26%;
+
+    @include respond-to(sm) {
+      height: 80%;
+      margin-top: -20%;
+    }
+  }
+
+  .swiper-button-next {
+    margin-right: -1.2%;
+  }
+
+  .swiper-button-prev {
+    margin-left: -1.2%;
+  }
+
+  .swiper-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    .swiper-pagination-bullet {
+      width: 30px;
+      height: 8px;
+      background-color: #ccc;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+
+      &-active {
+        background-color: $highlight-color;
+        width: 40px;
+      }
+    }
+  }
+
+  @include respond-to(sm) {
+    height: auto;
+
+    .swiper-slide img {
+      width: 80%;
+    }
+
+    .swiper-slide h3,
+    .swiper-slide p {
+      font-size: 1rem;
+    }
+  }
+}
+
+/* Typography */
+h1 {
+  color: $text-color;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-align: left;
+  margin-left: -7%;
+
+  @include respond-to(sm) {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,103 @@
+/* login.scss */
+/* General styling */
+body {
+  background-color: #f8f9fa;
+  font-family: "Arial", sans-serif;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 400px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.mb-3 {
+  position: relative;
+}
+
+/* Toggle Password Visibility */
+.toggle-password {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  color: #007bff;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+input.form-control {
+  padding-right: 40px;
+}
+
+.input-group-text {
+  background-color: transparent;
+  border: none;
+  color: #28a745;
+}
+
+/* Validation Messages */
+.validation-message {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.text-success {
+  color: #28a745;
+}
+
+.text-danger {
+  color: #dc3545;
+}
+
+.is-valid {
+  border-color: #28a745 !important;
+}
+
+.is-invalid {
+  border-color: #dc3545 !important;
+}
+
+/* Button styling */
+button[type=submit] {
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 10%;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button[type=submit]:hover {
+  background-color: #218838;
+}
+
+/* Add responsiveness */
+@media (max-width: 768px) {
+  .login-form {
+    padding: 20px;
+  }
+}/*# sourceMappingURL=login.css.map */

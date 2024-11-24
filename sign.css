@@ -1,0 +1,64 @@
+/* Variables */
+/* General Styles */
+body {
+  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* Password visibility toggle */
+.input-group {
+  position: relative;
+}
+.input-group .toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #6c757d;
+  font-size: 1.25rem;
+  outline: none;
+}
+.input-group .toggle-password:hover {
+  color: #007bff;
+}
+
+/* Input field styling */
+.form-control {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-control.is-valid, .form-control.is-invalid {
+  padding: 0.5rem;
+  border-width: 2px;
+}
+.form-control.is-valid {
+  border-color: #28a745;
+}
+.form-control.is-invalid {
+  border-color: #dc3545;
+}
+
+/* Validation messages styling */
+.validation-message {
+  font-size: 0.85rem;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 5px;
+  color: #198754;
+}
+.validation-message.invalid {
+  color: #dc3545;
+}
+.validation-message.valid {
+  color: #28a745;
+}/*# sourceMappingURL=sign.css.map */
