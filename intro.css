@@ -9,6 +9,11 @@
   justify-content: start;
   padding: 1rem;
 }
+.header .buttons1 {
+  width: 30vw;
+  display: flex;
+  justify-content: space-around;
+}
 .header .buttons {
   width: 40vw;
   display: flex;

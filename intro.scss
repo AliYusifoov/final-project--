@@ -34,6 +34,11 @@ $swiper-padding: 10px;
   display: flex;
   justify-content: start;
   padding: 1rem;
+  .buttons1{
+    width: 30vw;
+    display: flex;
+    justify-content: space-around;
+  }
 
   .buttons {
     width: 40vw;
