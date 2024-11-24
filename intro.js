@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 $(document).ready(function () {
-  $(".btn-sign").click(function() {
+  $(".btn-warning").click(function() {
     window.location.href = "login.html";
   })
 })
