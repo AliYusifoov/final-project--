@@ -6,7 +6,6 @@ $(document).ready(function () {
   let container = $("#productsContainer");
 
 
-  laptops = JSON.parse(storedLaptops);
   
   if (storedLaptops) {
       laptops.forEach((laptop) =>{            
