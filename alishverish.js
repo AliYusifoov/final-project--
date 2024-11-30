@@ -2,30 +2,11 @@ $(document).ready(function () {
     let laptops = [];
     let categories = ["Acer", "HP", "Asus", "Dell", "Lenovo", "LG", "Casper", "Fujitsu", "Nexus", "Samsung", "Toshiba", "Sony"];
   
-    const storedLaptops = localStorage.getItem("laptopData");
     let container = $("#productsContainer");
 
 
-    laptops = JSON.parse(storedLaptops);
     
-    if (storedLaptops) {
-        laptops.forEach((laptop) =>{            
-          console.log(laptop.status);
-          
-            let card = `
-            <div class="product-card">
-            <img src="${laptop.image}" alt="${laptop.name}">
-            <p><strong>Ad:</strong> ${laptop.name}</p>
-            <p><strong>Təsvir:</strong> ${laptop.description}</p>
-            <p><strong>Qiymət:</strong> ${laptop.price} AZN</p>
-            <p><strong>Yeni:</strong> ${laptop.status}</p>
-            <p><strong>Telefon:</strong> ${localStorage.phone}</p>
-            <button class="btn" data-laptop='${JSON.stringify(laptop)}'>Ətraflı</button>
-            </div>
-            `;
-            container.append(card);
-        })
-    }
+    
     
     
     const categoryImages = {
@@ -134,5 +115,26 @@ $(document).ready(function () {
         let modal = new bootstrap.Modal(document.getElementById('laptopModal'));
         modal.show();
     });
+    const storedLaptops = localStorage.getItem("laptopData");
+
+    if (storedLaptops) {
+      laptops = JSON.parse(storedLaptops);
+        laptops.forEach((laptop) =>{            
+          console.log(laptop.status);
+          
+            let card = `
+            <div class="product-card">
+            <img src="${laptop.image}" alt="${laptop.name}">
+            <p><strong>Ad:</strong> ${laptop.name}</p>
+            <p><strong>Təsvir:</strong> ${laptop.description}</p>
+            <p><strong>Qiymət:</strong> ${laptop.price} AZN</p>
+            <p><strong>Yeni:</strong> ${laptop.status}</p>
+            <p><strong>Telefon:</strong> ${localStorage.phone}</p>
+            <button class="btn" data-laptop='${JSON.stringify(laptop)}'>Ətraflı</button>
+            </div>
+            `;
+            container.append(card);
+        })
+    }
 });
   

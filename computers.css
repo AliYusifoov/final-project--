@@ -21,7 +21,7 @@ body {
 /* Fullscreen modal */
 .fullscreen-modal {
   display: none;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -34,9 +34,7 @@ body {
 
 .fullscreen-modal img {
   max-width: 95%;
-  top: 30%;
-  left: 30%;
-  position: absolute;
+  margin: 0 auto;
   max-height: 95%;
   -o-object-fit: contain;
      object-fit: contain;
