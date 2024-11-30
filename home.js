@@ -21,4 +21,10 @@ $(document).ready(function () {
     $(".btn-danger").click(function () {
         window.location.href = "intro.html"
     })
+    $(".btn-primary").click(function () {
+      window.location.href = "computers.html"
+    })
+    $(".btn-warning").click(function () {
+      window.location.href = "alisverish.html"
+    })
 })

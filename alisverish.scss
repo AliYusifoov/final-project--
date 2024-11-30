@@ -1,0 +1,140 @@
+// Variables for colors and spacing
+$primary-color: #f8c307; // Yellow
+$secondary-color: #007bff; // Blue
+$text-color: #333;
+$border-color: #ddd;
+$box-shadow-color: rgba(0, 0, 0, 0.1);
+$spacing: 10px;
+
+// General styling
+body {
+  font-family: Arial, sans-serif;
+  color: $text-color;
+  overflow-y: hidden;
+  background-color: #f9f9f9;
+}
+.modal-dialog {
+    max-width: 60vw;  /* Increase the modal width */
+    width: 40vw;
+    text-align: center;
+  }
+  
+  .modal-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .modal-body img {
+    width: 50%;  /* Image takes up 40% of the width */
+    object-fit: contain;  /* Keeps the aspect ratio intact */
+  }
+  
+  .modal-body .details {
+    width: 100%; 
+
+  }
+  
+  .modal-body .details p {
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  
+  .modal-body .details h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 90vh;
+  }
+  
+  .category-item {
+    background-color: #f8f9fa; /* Light gray background */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding around the text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+    
+    &:hover {
+      background-color: #007bff; /* Blue background on hover */
+      color: white; /* White text on hover */
+      transform: translateX(5px); /* Slight slide effect */
+    }
+  }
+  
+  .category-item.active {
+    background-color: #007bff; /* Active category background */
+    color: white; /* White text */
+  }
+  
+  .category-item p {
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .category-item a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+.products-grid {
+    position: relative;
+    top: 5%;
+  display: grid;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding-left: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: $spacing;
+}
+
+.product-card {
+  border: 1px solid $border-color;
+  border-radius: $spacing;
+  overflow: hidden;
+  padding: $spacing;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 2px 5px $box-shadow-color;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: $spacing;
+  }
+
+  p {
+    margin: 0 0 $spacing 0;
+
+    strong {
+      font-weight: bold;
+    }
+  }
+
+  button {
+    background-color: $secondary-color;
+    color: #fff;
+    border: none;
+    padding: $spacing;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($secondary-color, 10%);
+    }
+  }
+}
+
+.btn-warning {
+  background-color: $primary-color;
+  border: none;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}

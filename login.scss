@@ -1,10 +1,6 @@
 /* login.scss */
 
 /* General styling */
-body {
-    background-color: #f8f9fa;
-    font-family: 'Arial', sans-serif;
-  }
   
   .container {
     display: flex;
@@ -16,7 +12,7 @@ body {
   
   .login-form {
     width: 100%;
-    max-width: 400px;
+    max-width: 30%;
     background-color: #fff;
     padding: 30px;
     border-radius: 10px;
@@ -28,56 +24,25 @@ body {
     color: #333;
     margin-bottom: 20px;
   }
-  
-  .mb-3 {
-    position: relative;
-  }
-  
   /* Toggle Password Visibility */
-  .toggle-password {
-    background-color: transparent;
-    border: none;
-    font-size: 20px;
-    color: #007bff;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
-  
-  input.form-control {
-    padding-right: 40px;
-  }
-  
-  .input-group-text {
-    background-color: transparent;
-    border: none;
-    color: #28a745;
-  }
-  
-  /* Validation Messages */
-  .validation-message {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    font-size: 12px;
-    margin-top: 5px;
-  }
-  
-  .text-success {
-    color: #28a745;
-  }
-  
-  .text-danger {
-    color: #dc3545;
-  }
-  
-  .is-valid {
-    border-color: #28a745 !important;
-  }
-  
-  .is-invalid {
-    border-color: #dc3545 !important;
+  .xz{
+    position: relative;
+    .toggle-password {
+      position: absolute;
+      top: 50%;
+      right: 2rem;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.25rem;
+      color: #6c757d;
+      z-index: 3;
+      &:hover {
+        
+        color: #007bff; // Highlight color on hover
+      }
+    }
   }
   
   /* Button styling */

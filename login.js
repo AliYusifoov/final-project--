@@ -18,7 +18,7 @@ $(document).ready(function () {
   
   function validateField(input, condition, successMessage, errorMessage) {
     let field = $(input);
-    let parent = field.closest(".mb-3");
+    let parent = field.closest(".form-group");
     
     // Remove any existing validation messages before adding a new one
     parent.find(".validation-message").remove();

@@ -1,0 +1,125 @@
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  overflow-y: hidden;
+  background-color: #f9f9f9;
+}
+
+.modal-dialog {
+  max-width: 60vw; /* Increase the modal width */
+  width: 40vw;
+  text-align: center;
+}
+
+.modal-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.modal-body img {
+  width: 50%; /* Image takes up 40% of the width */
+  -o-object-fit: contain;
+     object-fit: contain; /* Keeps the aspect ratio intact */
+}
+
+.modal-body .details {
+  width: 100%;
+}
+
+.modal-body .details p {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.modal-body .details h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 90vh;
+}
+
+.category-item {
+  background-color: #f8f9fa; /* Light gray background */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Padding around the text */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+}
+.category-item:hover {
+  background-color: #007bff; /* Blue background on hover */
+  color: white; /* White text on hover */
+  transform: translateX(5px); /* Slight slide effect */
+}
+
+.category-item.active {
+  background-color: #007bff; /* Active category background */
+  color: white; /* White text */
+}
+
+.category-item p {
+  margin: 0;
+  font-weight: bold;
+}
+
+.category-item a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.products-grid {
+  position: relative;
+  top: 5%;
+  display: grid;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding-left: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+.product-card p {
+  margin: 0 0 10px 0;
+}
+.product-card p strong {
+  font-weight: bold;
+}
+.product-card button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.product-card button:hover {
+  background-color: #0062cc;
+}
+
+.btn-warning {
+  background-color: #f8c307;
+  border: none;
+}
+.btn-warning:hover {
+  background-color: #c69c06;
+}/*# sourceMappingURL=alisverish.css.map */

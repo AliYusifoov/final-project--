@@ -13,6 +13,21 @@ $(document).ready(function () {
     }
   });
 
+  // Password validation logic
+  $("#password").on("input", function () {
+    const password = $(this).val();
+    const parent = $(this).closest(".form-group");
+    const message = parent.find(".validation-message");
+
+    if (password.length >= 8) {
+      $(this).removeClass("is-invalid").addClass("is-valid");
+      message.text("Düzgündür").removeClass("text-danger").addClass("text-success");
+    } else {
+      $(this).removeClass("is-valid").addClass("is-invalid");
+      message.text("Şifrə ən azı 8 simvol olmalıdır.").removeClass("text-success").addClass("text-danger");
+    }
+  });
+
   // Reusable validation function
   function validateField(input, condition, successMessage, errorMessage) {
     const field = $(input);
@@ -60,16 +75,6 @@ $(document).ready(function () {
     );
   });
 
-  $("#password").on("input", function () {
-    const password = $(this).val();
-    validateField(
-      this,
-      password.length >= 2 && password.length <= 30,
-      "Düzgündür",
-      "Şifrə 2-30 simvol arasında olmalıdır."
-    );
-  });
-
   // Form submission
   $("#signupForm").on("submit", function (event) {
     event.preventDefault();
@@ -87,6 +92,7 @@ $(document).ready(function () {
     if (isNameValid && isPhoneValid && isUsernameValid && isPasswordValid) {
       localStorage.setItem("username", username);
       localStorage.setItem("password", password);
+      localStorage.setItem("phone", phone)
       alert("Hesab yaradıldı!");
       window.location.href = "login.html";
     } else {
