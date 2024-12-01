@@ -56,21 +56,23 @@ $(document).ready(function () {
       });
     }
   });
-  storedLaptops.forEach((laptop) => {
-    let laptop1 = {
-      category: laptop.category,
-      name: `Laptop ${laptop.name}`,
-      description: `Laptop description ${laptop.description}`,
-      price: laptop.price,
-      isNew: laptop.status,
-      phone: localStorage.getItem("loggedInPhone"),
-      imageUrl: laptop.image,
-      processor: `Intel Core ${laptop.processor}`,
-      ram: `${laptop.ram} GB`,
-      storage: `${laptop.storage} GB ${laptop.storageType}`
-    };
-    laptops.push(laptop1);
-  });
+  if (storedLaptops.length !== 0) { 
+    storedLaptops.forEach((laptop) => {
+      let laptop1 = {
+        category: laptop.category,
+        name: `Laptop ${laptop.name}`,
+        description: `Laptop description ${laptop.description}`,
+        price: laptop.price,
+        isNew: laptop.status,
+        phone: localStorage.getItem("loggedInPhone"),
+        imageUrl: laptop.image,
+        processor: `Intel Core ${laptop.processor}`,
+        ram: `${laptop.ram} GB`,
+        storage: `${laptop.storage} GB ${laptop.storageType}`
+      };
+      laptops.push(laptop1);
+    });
+  } 
   
   // Function to create a laptop card
   function createCard(laptop) {
