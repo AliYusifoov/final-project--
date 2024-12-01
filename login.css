@@ -1,28 +1,5 @@
 /* login.scss */
 /* General styling */
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.login-form {
-  width: 100%;
-  max-width: 30%;
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 20px;
-}
-
 /* Toggle Password Visibility */
 .xz {
   position: relative;
@@ -41,27 +18,4 @@ h2 {
 }
 .xz .toggle-password:hover {
   color: #007bff;
-}
-
-/* Button styling */
-button[type=submit] {
-  background-color: #28a745;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
-  margin-top: 10%;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-button[type=submit]:hover {
-  background-color: #218838;
-}
-
-/* Add responsiveness */
-@media (max-width: 768px) {
-  .login-form {
-    padding: 20px;
-  }
 }/*# sourceMappingURL=login.css.map */
