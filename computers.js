@@ -39,7 +39,6 @@ $(document).ready(function () {
     localStorage.setItem(storageKey, JSON.stringify(data));
   }
 
-  let i = 1;
   // Render table from local storage
   function renderTable() {
     let laptops = loadFromLocalStorage();
@@ -61,10 +60,18 @@ $(document).ready(function () {
       tbody.append(newRow);
     });
   }
+  function generateUniqueID() {
+    let laptops = loadFromLocalStorage();
+    if (laptops.length === 0) {
+      return 1; // Start with ID 1 if no laptops are stored
+    }
+    // Find the highest existing ID and increment it
+    return Math.max(...laptops.map((laptop) => laptop.id)) + 1;
+  }
 
   // Save button - Add or update data
   $('#saveComputerBtn').on('click', function () {
-    let id = i++;
+    let id = generateUniqueID();
     let laptops = loadFromLocalStorage();
     let newLaptop = {
       id: id,
@@ -84,15 +91,7 @@ $(document).ready(function () {
     };
 
 
-    
-
-    let index = laptops.findIndex((laptop) => laptop.id == id);
-
-    if (index !== -1) {
-      laptops[index] = newLaptop; // Update existing laptop
-    } else {
-      laptops.push(newLaptop); // Add new laptop
-    }
+    laptops.push(newLaptop); // Add new laptop
 
     saveToLocalStorage(laptops);
     renderTable();
@@ -122,7 +121,7 @@ $(document).ready(function () {
     if (laptop) {
       $('#computerId').val(laptop.id); // Hidden input to track the ID
       $('#category').val(laptop.category);
-      $('#computername').val(laptop.name);
+      $('#computerName').val(laptop.name);
       $('#computerPrice').val(laptop.price);
       $('#description').val(laptop.description);
       $('#newStatus').val(laptop.status);

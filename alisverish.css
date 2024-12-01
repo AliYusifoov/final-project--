@@ -72,6 +72,10 @@ body {
   text-decoration: none;
 }
 
+.btn-warning {
+  margin-top: 5%;
+}
+
 .products-grid {
   position: relative;
   top: 5%;
