@@ -87,12 +87,18 @@ $(document).ready(function () {
     const isNameValid = name.length >= 2 && name.length <= 30;
     const isPhoneValid = /^\d{3}-\d{3}-\d{4}$/.test(phone);
     const isUsernameValid = username.length >= 2 && username.length <= 30;
-    const isPasswordValid = password.length >= 2 && password.length <= 30;
+    const isPasswordValid = password.length >= 8;
 
     if (isNameValid && isPhoneValid && isUsernameValid && isPasswordValid) {
-      localStorage.setItem("username", username);
-      localStorage.setItem("password", password);
-      localStorage.setItem("phone", phone)
+      // Retrieve existing users from localStorage or initialize an empty array
+      let users = JSON.parse(localStorage.getItem("users")) || [];
+
+      // Add the new user to the array
+      users.push({ name, phone, username, password });
+
+      // Save the updated array back to localStorage
+      localStorage.setItem("users", JSON.stringify(users));
+
       alert("Hesab yaradıldı!");
       window.location.href = "login.html";
     } else {

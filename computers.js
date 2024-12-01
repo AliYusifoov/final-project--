@@ -1,5 +1,25 @@
 $(document).ready(function () {
-  let storageKey = "laptopData";
+  let storageKey = "laptopData" + localStorage.getItem("loggedInUsername");
+  $('#computerTable').on('click', 'tr img', function () {
+    let imgSrc = $(this).attr('src');  // Get the image source
+    $('#expandedImage').attr('src', imgSrc);  // Set the source for the modal image
+    $('#fullscreenModal').fadeIn();  // Show the modal with fadeIn
+    $('#fullscreenModal').css("display", "flex");  // Show the modal with fadeIn
+  });
+
+  // Close the modal when the close button is clicked
+  $('.close-btn').click(function() {
+    $('#fullscreenModal').fadeOut();  // Hide the modal with fadeOut
+  });
+
+  // Close the modal when the background is clicked (outside the image)
+  $('#fullscreenModal').click(function(e) {
+    if ($(e.target).is('#fullscreenModal')) {
+      $('#fullscreenModal').fadeOut();  // Hide the modal if the background is clicked
+    }
+  });
+
+
   
   function validateField(input, condition, successMessage, errorMessage) {
     const field = $(input);
@@ -52,8 +72,8 @@ $(document).ready(function () {
           <td><img src="${laptop.image}" alt="Image" style="max-width: 50px;"></td>
           <td>${laptop.price} AZN</td>
           <td>
-            <button class="btn btn-primary btn-sm btn-edit">Edit</button>
-            <button class="btn btn-danger btn-sm btn-delete">Delete</button>
+            <button class="btn btn-primary btn-sm btn-edit">Redaktə</button>
+            <button class="btn btn-danger btn-sm btn-delete">Sil</button>
           </td>
         </tr>
       `;

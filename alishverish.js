@@ -6,7 +6,7 @@ $(document).ready(function () {
 
   let laptops = [];
   let categories = ["Acer", "HP", "Asus", "Dell", "Lenovo", "LG", "Casper", "Fujitsu", "Nexus", "Samsung", "Toshiba", "Sony"];
-  const storedLaptops = JSON.parse(localStorage.getItem("laptopData"));
+  const storedLaptops = JSON.parse(localStorage.getItem("laptopData" + localStorage.getItem("loggedInUsername")));
   let container = $("#productsContainer");
   
   // Function to generate random phone number
@@ -63,7 +63,7 @@ $(document).ready(function () {
       description: `Laptop description ${laptop.description}`,
       price: laptop.price,
       isNew: laptop.status,
-      phone: localStorage.getItem("phone"),
+      phone: localStorage.getItem("loggedInPhone"),
       imageUrl: laptop.image,
       processor: `Intel Core ${laptop.processor}`,
       ram: `${laptop.ram} GB`,

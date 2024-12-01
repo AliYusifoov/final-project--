@@ -16,15 +16,26 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 $(document).ready(function () {
-    $("h1").text("İstifadəçi adı: " + localStorage.getItem("username"));
+  const loggedInUsername = localStorage.getItem("loggedInUsername");
     
-    $(".btn-danger").click(function () {
-        window.location.href = "intro.html"
-    })
-    $(".btn-primary").click(function () {
-      window.location.href = "computers.html"
-    })
-    $(".btn-warning").click(function () {
-      window.location.href = "alisverish.html"
-    })
+  // Display the username in the header
+  if (loggedInUsername) {
+      $("h1").text("İstifadəçi adı: " + loggedInUsername);
+  } else {
+      $("h1").text("İstifadəçi adı: Yoxdur"); 
+  }
+
+  $(".btn-danger").click(function () {
+      localStorage.removeItem("loggedInUsername"); 
+      window.location.href = "intro.html"; 
+  });
+
+  $(".btn-primary").click(function () {
+      window.location.href = "computers.html"; 
+  });
+
+  $(".btn-warning").click(function () {
+      window.location.href = "alisverish.html"; 
+  });
+
 })

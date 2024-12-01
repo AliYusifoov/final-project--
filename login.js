@@ -66,14 +66,26 @@ $(document).ready(function () {
     let isPasswordValid = password.length >= 2 && password.length <= 30;
 
     if (isUsernameValid && isPasswordValid) {
-      // Check if the username and password match stored values
-      let storedUsername = localStorage.getItem("username");
-      let storedPassword = localStorage.getItem("password");
+      // Retrieve the stored list of users
+      let users = JSON.parse(localStorage.getItem("users")) || [];
 
-      if (username === storedUsername && password === storedPassword) {
+      // Check if the username and password match any user in the list
+      let userFound = users.find(user => user.username === username && user.password === password);
+      let index;
+      let phone;
+      users.forEach(user =>{ 
+      if (user.username === username && user.password == password) {
+        index = users.indexOf(user)
+        phone = users[index].phone;
+      }
+    });
+      
+      if (userFound) {
+        localStorage.setItem("loggedInUsername", userFound.username); // Save the logged-in user's username
+        localStorage.setItem("loggedInPhone", phone)
         alert("Daxil oldunuz!");
         window.location.href = "home.html"; // Redirect to home or dashboard
-      } else {
+    }else {
         alert("İstifadəçi adı və ya şifrə yanlışdır.");
       }
     } else {
