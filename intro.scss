@@ -16,17 +16,7 @@ $btn-padding: 0.5vw 2vh;
 $swiper-padding: 10px;
 
 /* Mixin for Responsive Design */
-@mixin respond-to($breakpoint) {
-  @if $breakpoint == sm {
-    @media (max-width: #{$breakpoint-sm}) { @content; }
-  }
-  @else if $breakpoint == md {
-    @media (max-width: #{$breakpoint-md}) { @content; }
-  }
-  @else if $breakpoint == lg {
-    @media (max-width: #{$breakpoint-lg}) { @content; }
-  }
-}
+
 
 /* Header Styling */
 .header {
@@ -50,21 +40,6 @@ $swiper-padding: 10px;
     }
   }
 
-  @include respond-to(sm) {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-
-    .buttons {
-      width: 90%;
-      justify-content: center;
-
-      .btn {
-        padding: 0.8rem 1.5rem;
-        font-size: 0.9rem;
-      }
-    }
-  }
 }
 
 /* Swiper Styles */

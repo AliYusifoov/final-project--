@@ -19,4 +19,7 @@ $(document).ready(function () {
   $(".login").click(function() {
     window.location.href = "login.html";
   })
+  $(".btn-success").click(function () {
+    alert("Hesabınıza girin");
+  })
 })
