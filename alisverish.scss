@@ -10,7 +10,6 @@ $spacing: 10px;
 body {
   font-family: Arial, sans-serif;
   color: $text-color;
-  overflow-y: hidden;
   background-color: #f9f9f9;
 }
 .modal-dialog {
@@ -49,13 +48,13 @@ body {
     list-style: none;
     padding: 0;
     margin: 0;
-    height: 90vh;
+    margin-bottom: 10%;
   }
   
   .category-item {
     background-color: #f8f9fa; /* Light gray background */
     border-radius: 5px; /* Rounded corners */
-    padding: 10px 20px; /* Padding around the text */
+    padding: 0.5vh 1vw; /* Padding around the text */
     cursor: pointer; /* Pointer cursor on hover */
     transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
     
