@@ -75,6 +75,15 @@ $(document).ready(function () {
     );
   });
 
+  function showSuccessMessage(message) {
+    const successMessage = $(`<div class="alert alert-success">${message}</div>`);
+    $(".signup-form").prepend(successMessage); // Add message to the top of the form
+    setTimeout(() => {
+      successMessage.fadeOut(() => successMessage.remove()); // Remove after 1 second
+    }, 1000);
+  }
+
+
   // Form submission
   $("#signupForm").on("submit", function (event) {
     event.preventDefault();
@@ -99,8 +108,12 @@ $(document).ready(function () {
       // Save the updated array back to localStorage
       localStorage.setItem("users", JSON.stringify(users));
 
-      alert("Hesab yaradıldı!");
-      window.location.href = "login.html";
+      showSuccessMessage("İstifadəçi uğurla yaradıldı!");
+      
+      // Optional: Redirect after the message
+      setTimeout(() => {
+        window.location.href = "login.html";
+      }, 1500);
     } else {
       alert("Zəhmət olmasa bütün məlumatları düzgün daxil edin!");
     }

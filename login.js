@@ -55,6 +55,15 @@ $(document).ready(function () {
     );
   });
 
+  // Function to show a temporary success message
+  function showSuccessMessage(message) {
+    const successMessage = $(`<div class="alert alert-success">${message}</div>`);
+    $(".login-form").prepend(successMessage); // Add message to the top of the form
+    setTimeout(() => {
+      successMessage.fadeOut(() => successMessage.remove()); // Remove after 1 second
+    }, 1000);
+  }
+
   // Login form submission
   $("#loginForm").on("submit", function (event) {
     event.preventDefault();
@@ -83,13 +92,28 @@ $(document).ready(function () {
       if (userFound) {
         localStorage.setItem("loggedInUsername", userFound.username); // Save the logged-in user's username
         localStorage.setItem("loggedInPhone", phone)
-        alert("Daxil oldunuz!");
-        window.location.href = "home.html"; // Redirect to home or dashboard
-    }else {
-        alert("İstifadəçi adı və ya şifrə yanlışdır.");
+        
+        // Show success message
+        showSuccessMessage("Uğurla daxil oldunuz!");
+
+        // Redirect after the success message
+        setTimeout(() => {
+          window.location.href = "home.html";
+        }, 1500);
+      } else {
+        // Show error as a Bootstrap alert
+        const errorMessage = $(`<div class="alert alert-danger">İstifadəçi adı və ya şifrə yanlışdır.</div>`);
+        $(".login-form").prepend(errorMessage);
+        setTimeout(() => {
+          errorMessage.fadeOut(() => errorMessage.remove());
+        }, 3000); // Error disappears after 3 seconds
       }
     } else {
-      alert("Zəhmət olmasa məlumatları düzgün daxil edin.");
+      const errorMessage = $(`<div class="alert alert-danger">Zəhmət olmasa məlumatları düzgün daxil edin.</div>`);
+      $(".login-form").prepend(errorMessage);
+      setTimeout(() => {
+        errorMessage.fadeOut(() => errorMessage.remove());
+      }, 3000);
     }
   });
 });

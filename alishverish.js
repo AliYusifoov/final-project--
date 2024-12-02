@@ -144,4 +144,10 @@ $(document).ready(function () {
     `);
     $("#laptopModal").modal("show");
   });
+
+  if (!localStorage.getItem("loggedInUsername")) {
+    $(".btn-warning").attr("href", "intro.html");
+  } else{
+    $(".btn-warning").attr("href", "home.html");
+  }
 });

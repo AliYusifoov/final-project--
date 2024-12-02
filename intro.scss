@@ -29,12 +29,16 @@ $swiper-padding: 10px;
     display: flex;
     justify-content: space-around;
   }
-
+  
   .buttons {
-    width: 40vw;
+    width: 30vw;
     display: flex;
     justify-content: space-around;
-
+    
+    button{
+      width: 5vw;
+      height: 5vh;
+    }
     .btn {
       padding: $btn-padding;
     }

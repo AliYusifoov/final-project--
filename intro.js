@@ -20,6 +20,6 @@ $(document).ready(function () {
     window.location.href = "login.html";
   })
   $(".btn-success").click(function () {
-    alert("Hesabınıza girin");
+    window.location.href = "alisverish.html";
   })
 })
