@@ -120,15 +120,19 @@ $(document).ready(function () {
     $('#imagePreview').hide();
   });
 
+
   // Handle Delete Button Click
   $(document).on('click', '.btn-delete', function () {
-    let row = $(this).closest('tr');
-    let id = row.data('id');
-    let laptops = loadFromLocalStorage();
-    laptops = laptops.filter((laptop) => laptop.id != id);
-
-    saveToLocalStorage(laptops);
-    renderTable();
+    let a = confirm("Komputeri silməyə əminsiz?");
+    if (a) {
+      let row = $(this).closest('tr');
+      let id = row.data('id');
+      let laptops = loadFromLocalStorage();
+      laptops = laptops.filter((laptop) => laptop.id != id);
+  
+      saveToLocalStorage(laptops);
+      renderTable();
+    } 
   });
 
   // Handle Edit Button Click
